@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ruban Hospital</title>
+
+  <!-- HTML Auto Refresh -->
+  <meta http-equiv="refresh" content="60">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#ffffff,#f3f3f3,#e6e6e6);
+      position:relative;
+    }
+
+    .background-glow{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:rgba(255,0,0,0.08);
+      border-radius:50%;
+      filter:blur(70px);
+      animation:moveGlow 8s infinite alternate ease-in-out;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      background:white;
+      border-radius:30px;
+      padding:60px;
+      text-align:center;
+      box-shadow:0 10px 40px rgba(0,0,0,0.15);
+      z-index:2;
+      animation:fadeIn 2s ease;
+    }
+
+    .logo-box{
+      background:#d40000;
+      display:inline-block;
+      padding:25px 50px;
+      border-radius:15px;
+      margin-bottom:40px;
+      box-shadow:0 0 25px rgba(255,0,0,0.3);
+    }
+
+    .logo{
+      font-size:90px;
+      font-weight:bold;
+      color:white;
+      letter-spacing:5px;
+    }
+
+    .tagline{
+      margin-top:10px;
+      font-size:36px;
+      color:white;
+      font-style:italic;
+      opacity:0.95;
+    }
+
+    .welcome{
+      margin-top:30px;
+      font-size:55px;
+      color:#d40000;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+
+    .subtext{
+      margin-top:20px;
+      font-size:28px;
+      color:#555;
+    }
+
+    #clock{
+      margin-top:40px;
+      font-size:24px;
+      color:#444;
+      font-weight:bold;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes moveGlow{
+      from{
+        transform:translate(-150px,-100px);
+      }
+      to{
+        transform:translate(150px,100px);
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="background-glow"></div>
+
+  <div class="container">
+
+    <div class="logo-box">
+
+      <div class="logo">RUBAN</div>
+
+      <div class="tagline">
+        redefining healthcare.....
+      </div>
+
+    </div>
+
+    <div class="welcome">
+      WELCOME TO RUBAN HOSPITAL
+    </div>
+
+    <div class="subtext">
+      Advanced Healthcare & Patient Care
+    </div>
+
+    <div id="clock"></div>
+
+  </div>
+
+  <script>
+
+    // Live Clock
+    function updateClock(){
+
+      const now = new Date();
+
+      const time = now.toLocaleTimeString();
+      const date = now.toDateString();
+
+      document.getElementById("clock").innerHTML =
+      date + " | " + time;
+
+    }
+
+    setInterval(updateClock,1000);
+
+    updateClock();
+
+
+    // Tiny Auto Scroll Activity
+    setInterval(() => {
+
+      window.scrollBy(0,1);
+
+      setTimeout(() => {
+
+        window.scrollBy(0,-1);
+
+      },500);
+
+    },30000);
+
+
+    // Fake Mouse Activity
+    setInterval(() => {
+
+      document.dispatchEvent(
+        new MouseEvent('mousemove')
+      );
+
+    },45000);
+
+
+    // JavaScript Auto Refresh
+    setInterval(() => {
+
+      location.reload();
+
+    },60000);
+
+  </script>
+
+</body>
+</html>
