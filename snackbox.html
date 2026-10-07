@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0907">
+<title>Snack Boxes | Royal Zaika – Premium Catering in Patna</title>
+<meta name="description" content="Explore Royal Zaika vegetarian and non-vegetarian snack boxes with 3, 5 and 8 snack items.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#e0a43a;--gold2:#f3c868;--bg:#0b0907;--card:#16120d;--line:rgba(224,164,58,.25);--txt:#f4ede1;--mut:#b9ad98}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Poppins',sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+h1,h2,h3,.logo{font-family:'Cinzel',serif}
+.wrap{width:min(1120px,100%);margin:auto}
+.script{font-family:'Great Vibes',cursive;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 22px;border:1px solid var(--gold);border-radius:8px;font-size:.9rem;font-weight:500}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1206}
+header{position:fixed;inset:0 0 auto;z-index:50;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;transition:.3s}
+header.scrolled{background:rgba(11,9,7,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:9px;color:var(--gold2);font-size:1.05rem;letter-spacing:1px}
+.logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}
+.logo small{display:block;font: .85rem 'Great Vibes',cursive;color:var(--mut);letter-spacing:0}
+nav ul{display:flex;gap:17px;list-style:none}
+nav a{color:var(--mut);font-size:.81rem}
+nav a:hover,nav a[aria-current="page"]{color:var(--gold2)}
+.header-cta{display:flex;align-items:center}
+.burger{display:none;border:0;background:none;color:var(--gold2);font-size:1.6rem;cursor:pointer}
+.page-hero{min-height:300px;padding:130px 6% 45px;display:grid;place-items:center;text-align:center;background:radial-gradient(ellipse at 50% 0,#39260f 0,transparent 65%),var(--bg);border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--gold2);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem}
+.page-hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;margin:8px 0}
+.page-hero .script{font-size:clamp(1.8rem,4vw,2.6rem)}
+.plans{padding:46px 6% 68px}
+.section-heading{text-align:center;margin:0 auto 24px}
+.section-heading .script{font-size:1.7rem}
+.section-heading h2{font-size:clamp(1.6rem,3vw,2.1rem);margin:2px 0 5px}
+.section-heading p,.category-heading p{color:var(--mut);font-size:.88rem}
+.category-nav{display:flex;justify-content:center;gap:12px;margin:0 auto 30px}
+.category-nav a{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:#100d09}
+.category-icon{width:34px;height:34px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
+.category-nav a:hover{border-color:var(--gold);color:var(--gold2)}
+.mobile-switch{display:none}
+.category-nav a:focus-visible,.mobile-switch button:focus-visible,.view-options:focus-visible,.modal-close:focus-visible,.order-link:focus-visible,.burger:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.snack-category{scroll-margin-top:90px}
+.snack-category+.snack-category{margin-top:46px;padding-top:36px;border-top:1px solid var(--line)}
+.category-heading{text-align:center;margin:0 auto 19px}
+.category-heading h2{display:flex;align-items:center;justify-content:center;gap:9px;font-size:1.5rem;color:#b8e58f}
+.snack-category.nonveg .category-heading h2{color:#ffb09f}
+.menu-note{max-width:780px;margin:0 auto 21px;padding:10px 14px;border:1px solid var(--line);border-radius:9px;background:rgba(224,164,58,.06);color:var(--mut);font-size:.76rem;text-align:center}
+.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.package-card{display:grid;gap:13px;align-content:start;padding:15px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(110deg,#11100c,var(--card))}
+.package-card.popular{border-color:rgba(224,164,58,.7)}
+.snack-art{position:relative;min-height:190px;overflow:hidden;border-radius:11px;background:linear-gradient(135deg,#24190c,#110e09)}
+.snack-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.snack-art::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(8,7,5,.48))}
+.package-info{padding:3px 2px}
+.item-count{display:flex;align-items:baseline;gap:7px;color:#8fc36a;line-height:1}
+.item-count strong{font-size:3.4rem}
+.item-count span{font-size:1.05rem}
+.package-card h3{font-size:1.08rem;margin:7px 0}
+.package-meta{display:grid;gap:4px;color:var(--mut);font-size:.82rem}
+.package-meta span:before{content:"✦";margin-right:8px;color:var(--gold2)}
+.price{margin-top:12px;color:var(--gold2);font-size:.85rem;font-weight:500}
+.view-options{width:100%;min-height:42px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--gold2);font-size:.83rem;cursor:pointer}
+.view-options:hover{background:rgba(224,164,58,.12);border-color:var(--gold)}
+.snack-dialog{width:min(760px,calc(100% - 32px));max-width:none;max-height:min(86vh,820px);max-height:min(86dvh,820px);margin:auto;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#100d09;color:var(--txt);box-shadow:0 24px 80px #000b}
+.snack-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(3px)}
+.dialog-header{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line);background:#100d09}
+.dialog-header h2{color:var(--gold2);font-size:1.1rem}
+.modal-close{width:38px;height:38px;flex:none;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--txt);font-size:1.25rem;cursor:pointer}
+.dialog-content{max-height:calc(min(86vh,820px) - 72px);max-height:calc(min(86dvh,820px) - 72px);padding:12px 18px 18px;overflow-y:auto;overscroll-behavior:contain}
+.dialog-note{margin:2px 0 12px;color:var(--mut);font-size:.74rem;text-align:center}
+.option-list{display:grid;gap:10px}
+.snack-option{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:10px;padding:9px;border:1px solid var(--line);border-radius:10px;background:rgba(8,7,5,.6)}
+.option-art{display:grid;place-items:center;width:72px;height:72px;overflow:hidden;border-radius:8px;background:linear-gradient(135deg,#24190c,#100d09)}
+.option-art img{width:100%;height:100%;object-fit:cover}
+.option-info h3{font-family:'Poppins',sans-serif;font-size:.81rem;line-height:1.4}
+.option-info p{margin:3px 0 8px;color:var(--mut);font-size:.7rem;line-height:1.45}
+.option-actions{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.option-price{color:var(--gold2);font-size:.71rem;font-weight:500}
+.order-link{display:inline-flex;padding:6px 9px;border:1px solid var(--line);border-radius:8px;color:var(--gold2);font-size:.7rem}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:32px auto 0;max-width:900px}
+.trust-item{padding:14px 12px;text-align:center;border:1px solid var(--line);border-radius:11px;background:rgba(22,18,13,.75);color:var(--mut);font-size:.8rem}
+.trust-item strong{display:block;color:var(--gold2);font-weight:500}
+.cta-section{padding:0 6% 62px}
+.cta-panel{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:25px 30px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(90deg,#2a1d0c,#0f0b07)}
+.cta-panel h2{font-size:1.2rem;color:var(--gold2)}
+.cta-panel p,.footer p,.footer li{color:var(--mut);font-size:.84rem}
+.footer{padding:40px 6% 18px;border-top:1px solid var(--line);background:#070605}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:26px}
+.footer h3{margin-bottom:10px;color:var(--gold2);font-size:1rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:6px}
+.footer a:hover{color:var(--gold2)}
+.footer-brand{margin-bottom:12px}
+.copyright{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);color:var(--mut);font-size:.8rem;text-align:center}
+@media(max-width:1050px){
+  header{height:76px;padding:8px 5%}.burger{display:grid;place-items:center;z-index:3;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:rgba(22,18,13,.9);font-size:1.25rem;line-height:1}
+  header .logo{position:absolute;left:50%;transform:translateX(-50%);gap:7px;font-size:.88rem;white-space:nowrap}header .logo img{width:40px;height:40px}
+  .header-cta{display:none}
+  nav{position:fixed;inset:84px 12px auto auto;width:min(360px,calc(100vw - 48px));max-height:calc(100dvh - 104px);padding:16px;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:16px;background:#100d09;box-shadow:0 18px 55px rgba(0,0,0,.65);transform:translateX(calc(100% + 24px));opacity:0;visibility:hidden;pointer-events:none;transition:transform .28s ease,opacity .2s ease,visibility .28s}
+  nav.open{transform:translateX(0);opacity:1;visibility:visible;pointer-events:auto}
+  nav::before{content:"MENU";display:block;margin:2px 12px 12px;color:var(--gold2);font-size:.72rem;font-weight:600;letter-spacing:.18em}
+  nav ul{flex-direction:column;gap:4px}
+  nav a{display:flex;align-items:center;min-height:48px;padding:10px 12px;border-radius:9px;font-size:1rem}
+  nav a::after{display:none}
+  nav a:hover,nav a[aria-current="page"]{background:rgba(224,164,58,.1);color:var(--gold2)}
+  .page-hero{min-height:270px;padding:116px 5% 38px}.plans{padding:36px 5% 54px}
+  .package-grid{grid-template-columns:1fr}
+  .package-card{width:100%;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:center;gap:24px;max-width:900px;margin-inline:auto}
+  .snack-art{height:210px;min-height:0}.package-info{padding:4px 14px 4px 0}
+  .cta-section{padding:0 5% 48px}.cta-panel{justify-content:center;text-align:center}
+  .footer{padding:36px 5% 18px}
+}
+@media(max-width:620px){
+  header .logo{font-size:.76rem}header .logo img{width:36px;height:36px}
+  .page-hero{min-height:240px;padding-top:102px}.page-hero h1{font-size:2.2rem}
+  .plans{padding:29px 5% 42px}.section-heading{margin-bottom:18px}
+  .category-nav{display:none}
+  .mobile-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:min(520px,100%);margin:0 auto 24px;padding:7px;border:1px solid var(--line);border-radius:14px;background:#100d09}
+  .mobile-switch button{display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;padding:6px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--mut);font:inherit;font-size:.83rem;font-weight:500;cursor:pointer;transition:.2s}
+  .mobile-switch button[aria-pressed="true"][data-category="veg"]{background:rgba(89,139,54,.2);border-color:rgba(143,195,106,.7);color:#b8e58f}
+  .mobile-switch button[aria-pressed="true"][data-category="nonveg"]{background:rgba(160,53,42,.2);border-color:rgba(214,103,83,.65);color:#ffb09f}
+  html[data-snack-category="veg"] .snack-category.nonveg,html[data-snack-category="nonveg"] .snack-category.veg{display:none}
+  .snack-category+.snack-category{margin-top:32px;padding-top:27px}.category-heading{margin-bottom:16px}.category-heading h2{font-size:1.25rem}.category-icon{width:28px;height:28px}
+  .package-grid{gap:13px}.package-card{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:13px;padding:11px;border-radius:13px}
+  .snack-art{height:132px}
+  .package-info{padding:3px 1px}.item-count strong{font-size:2.45rem}.item-count span{font-size:1.15rem}
+  .package-card h3{font-size:.88rem;margin:6px 0}.package-meta{font-size:.72rem;gap:2px}.package-meta span:before{margin-right:5px}.price{font-size:.78rem;margin-top:11px}
+  .view-options{grid-column:1/-1}
+  .view-options{min-height:39px;font-size:.77rem}
+  .snack-dialog{width:calc(100% - 20px);max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);border-radius:13px}
+  .dialog-header{padding:10px 12px}.dialog-header h2{font-size:.92rem}
+  .dialog-content{max-height:calc(100vh - 112px);max-height:calc(100dvh - 112px);padding:10px}
+  .snack-option{grid-template-columns:56px minmax(0,1fr);gap:8px;padding:8px}.option-art{width:56px;height:56px}
+  .option-info h3{font-size:.75rem}.option-info p{font-size:.65rem}.option-price,.order-link{font-size:.66rem}
+  .trust-grid{grid-template-columns:1fr;gap:8px;margin-top:22px}.trust-item{display:flex;justify-content:center;gap:6px;padding:9px}.trust-item strong{display:inline}
+  .cta-panel{padding:20px 15px}.footer-grid{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:360px){.package-card{grid-template-columns:minmax(0,1fr)}.snack-art{height:150px}.package-info{padding:4px}.price{margin-top:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header id="header">
+  <button class="burger" id="burger" type="button" aria-label="Open menu" aria-controls="nav" aria-expanded="false">☰</button>
+  <a href="index.html" class="logo" aria-label="Royal Zaika home"><img src="Royal-Zaika.webp" alt=""><span>ROYAL ZAIKA<small>Taste Jo Dil Jeet Le</small></span></a>
+  <nav id="nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html#home">Home</a></li><li><a href="about.html">About Us</a></li>
+      <li><a href="index.html#services">Services</a></li><li><a href="mealbox.html">Meal Box</a></li>
+      <li><a href="snackbox.html" aria-current="page">Snack Box</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-cta"><a class="btn btn-gold" href="https://wa.me/917542006601">Order Now</a></div>
+</header>
+<main>
+  <section class="page-hero"><div><span class="eyebrow">Little bites, big delight</span><h1>Our Snack Boxes</h1><span class="script">Fresh, tasty &amp; made to share</span></div></section>
+  <section class="plans">
+    <div class="wrap">
+      <div class="section-heading"><span class="script">Pick your perfect snack spread</span><h2>Choose Your Snack Box</h2><p>Choose veg or non-veg with 3, 5 or 8 snack items.</p></div>
+      <nav class="category-nav" aria-label="Snack categories"><a href="#veg-snacks"><img class="category-icon" src="3 item veg.webp" alt="">Veg Snack Boxes</a><a href="#nonveg-snacks"><img class="category-icon" src="3 item non -veg.webp" alt="">Non-Veg Snack Boxes</a></nav>
+      <div class="mobile-switch" role="group" aria-label="Choose snack category"><button type="button" data-category="veg" aria-pressed="true"><img class="category-icon" src="3 item veg.webp" alt=""> Veg Snacks</button><button type="button" data-category="nonveg" aria-pressed="false"><img class="category-icon" src="3 item non -veg.webp" alt=""> Non-Veg Snacks</button></div>
+      <section class="snack-category veg" id="veg-snacks" aria-labelledby="veg-heading" data-category="veg">
+        <div class="category-heading"><h2 id="veg-heading"><img class="category-icon" src="3 item veg.webp" alt="">Veg Snack Boxes</h2><p>Vegetarian favorites in 3, 5 &amp; 8 item boxes</p></div>
+        <p class="menu-note">Suggested combinations and example prices are temporary. Confirm the final menu and price when ordering.</p>
+        <div class="package-grid" id="veg-packages"></div>
+      </section>
+      <section class="snack-category nonveg" id="nonveg-snacks" aria-labelledby="nonveg-heading" data-category="nonveg">
+        <div class="category-heading"><h2 id="nonveg-heading"><img class="category-icon" src="3 item non -veg.webp" alt="">Non-Veg Snack Boxes</h2><p>Flavorful bites in 3, 5 &amp; 8 item boxes</p></div>
+        <p class="menu-note">Suggested combinations and example prices are temporary. Confirm the final menu and price when ordering.</p>
+        <div class="package-grid" id="nonveg-packages"></div>
+      </section>
+      <dialog class="snack-dialog" id="snack-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-header"><h2 id="dialog-title">Snack Box Options</h2><button class="modal-close" type="button" aria-label="Close snack options">×</button></div>
+        <div class="dialog-content"><p class="dialog-note">Suggested snack combinations and prices are temporary examples. Confirm the final menu and price with us.</p><div class="option-list" id="option-list"></div></div>
+      </dialog>
+      <div class="trust-grid" aria-label="Snack box benefits"><div class="trust-item"><strong>Freshly prepared</strong> for every box</div><div class="trust-item"><strong>Veg &amp; non-veg choices</strong> for your guests</div><div class="trust-item"><strong>Flexible box sizes</strong> for every occasion</div></div>
+    </div>
+  </section>
+  <section class="cta-section"><div class="wrap cta-panel"><div><h2>Planning snacks for your team or event?</h2><p>Tell us your preferred box size and snack selection.</p></div><a class="btn btn-gold" href="contact.html">Plan with us →</a></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-grid">
+  <div><a href="index.html" class="logo footer-brand"><img src="Royal-Zaika.webp" alt=""><span>ROYAL ZAIKA<small>Taste Jo Dil Jeet Le</small></span></a><p>Fresh snack boxes and premium catering for every occasion in Patna and beyond.</p></div>
+  <div><h3>Quick Links</h3><ul><li><a href="index.html#home">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="index.html#services">Services</a></li><li><a href="mealbox.html">Meal Box</a></li><li><a href="snackbox.html">Snack Box</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><h3>Contact Us</h3><ul><li><a href="tel:+917542006601">+91 7542006601</a></li><li><a href="https://wa.me/917542006601">WhatsApp</a></li><li><a href="mailto:info@royalzaika.com">info@royalzaika.com</a></li><li>Patna, Bihar, India</li></ul></div>
+</div><div class="copyright">© 2026 Royal Zaika. All Rights Reserved.</div></footer>
+<script>
+const header=document.getElementById('header');
+const nav=document.getElementById('nav');
+const burger=document.getElementById('burger');
+const dialog=document.getElementById('snack-dialog');
+const optionList=document.getElementById('option-list');
+const dialogTitle=document.getElementById('dialog-title');
+const data={
+  veg:{label:'Veg',items:['Veg sandwich','Crispy samosa','Paneer puff','French fries','Veg spring roll','Hara bhara kebab','Mini brownie','Aloo tikki','Mini veg burger','Dhokla bites','Cheese balls','Veg cutlet'],prices:{3:[99,105,110,115,120,125,130,135,140,145],5:[149,155,160,165,170,175,180,185,190,195],8:[219,225,230,235,240,245,250,255,260,265]},names:['Classic Veg Munch','Crispy Street Bites','Tea-Time Favorites','Paneer Party Mix','Golden Crunch Box','Garden Snack Treat','Royal Veg Selection','Cheesy Bites Box','Spice Route Snacks','Celebration Veg Mix']},
+  nonveg:{label:'Non-Veg',items:['Chicken tikka bites','Masala egg halves','Chicken roll','Chicken seekh kebab','Chicken sandwich','Crispy prawns','Chicken wings','Chicken samosa','Mini chicken burger','Fish fingers','Chicken popcorn','Pepper chicken bites'],prices:{3:[129,135,140,145,150,155,160,165,170,175],5:[179,185,190,195,200,205,210,215,220,225],8:[249,255,260,265,270,275,280,285,290,295]},names:['Classic Chicken Munch','Crispy Non-Veg Bites','Tea-Time Meat Treats','Tikka Party Mix','Golden Chicken Crunch','Royal Kebab Selection','Spice Route Non-Veg','Seafood Snack Treat','Celebration Chicken Box','Grand Non-Veg Mix']}
+};
+const snackPackageImages={
+  'veg-3':'3 item veg.webp',
+  'veg-5':'5 item veg.webp',
+  'veg-8':'8 item veg.webp',
+  'nonveg-3':'3 item non -veg.webp',
+  'nonveg-5':'5 item non-veg.webp',
+  'nonveg-8':'8 item non-veg.webp'
+};
+// Each uploaded package photo is used for its ten options; replace individual entries for unique photos.
+const snackOptionImages=Object.fromEntries(Object.entries(snackPackageImages).map(([group,image])=>[group,Array(10).fill(image)]));
+let selectedCategory='veg';
+function renderPackages(){
+  for(const category of ['veg','nonveg']){
+    document.getElementById(`${category}-packages`).innerHTML=[3,5,8].map(size=>{
+      const menu=data[category],price=menu.prices[size][0];
+      return `<article class="package-card${size===5?' popular':''}">
+        <div class="snack-art"><img src="${snackPackageImages[`${category}-${size}`]}" alt="${size}-item ${menu.label} snack box"></div>
+        <div class="package-info"><div class="item-count"><strong>${size}</strong><span>ITEMS</span></div><h3>${size}-Item ${menu.label} Snack Box</h3>
+          <div class="package-meta"><span>${size} snack items</span><span>${size===3?'Light snack break':size===5?'Perfect sharing box':'Complete snack spread'}</span></div>
+          <p class="price">Options from ₹${price} (example)</p>
+        </div>
+        <button class="view-options" type="button" data-category="${category}" data-size="${size}">View 10 Options</button>
+      </article>`;
+    }).join('');
+  }
+}
+function openOptions(category,size){
+  const menu=data[category];
+  const imageGroup=`${category}-${size}`;
+  dialogTitle.textContent=`${size}-Item ${menu.label} Snack Box Options`;
+  optionList.innerHTML=Array.from({length:10},(_,index)=>{
+    const snacks=Array.from({length:size},(_,itemIndex)=>menu.items[(index*2+itemIndex)%menu.items.length]);
+    const price=menu.prices[size][index],name=menu.names[index],description=snacks.join(' · ');
+    const message=`Hello Royal Zaika, I want to order the ${size}-Item ${menu.label} Snack Box - ${name}. Items: ${description}. Temporary example price: ₹${price} per box. Please confirm the final menu and price.`;
+    const imageSource=snackOptionImages[imageGroup][index];
+    const optionImage=`<img src="${imageSource||snackPackageImages[imageGroup]}" alt="${size}-item ${menu.label} snack box option: ${name}">`;
+    return `<article class="snack-option"><div class="option-art" aria-hidden="true">${optionImage}</div><div class="option-info">
+      <h3>${index+1}. ${name}</h3><p>${description}</p><div class="option-actions"><span class="option-price" aria-label="Temporary example price ₹${price} per box">₹${price} (example)</span>
+      <a class="order-link" href="https://wa.me/917542006601?text=${encodeURIComponent(message)}" target="_blank" rel="noopener">Order on WhatsApp →</a></div>
+    </div></article>`;
+  }).join('');
+  dialog.showModal();
+}
+function updateCategory(){
+  document.documentElement.dataset.snackCategory=selectedCategory;
+  document.querySelectorAll('.mobile-switch button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.category===selectedCategory)));
+}
+renderPackages();
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+const closeMenu=()=>{nav.classList.remove('open');burger.textContent='☰';burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu')};
+burger.addEventListener('click',()=>{const open=nav.classList.toggle('open');burger.textContent=open?'✕':'☰';burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Close menu':'Open menu')});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!burger.contains(event.target))closeMenu()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
+document.querySelectorAll('.mobile-switch button').forEach(button=>button.addEventListener('click',()=>{selectedCategory=button.dataset.category;updateCategory()}));
+document.querySelectorAll('.category-nav a').forEach(link=>link.addEventListener('click',()=>{selectedCategory=link.hash==='#veg-snacks'?'veg':'nonveg';updateCategory()}));
+document.querySelectorAll('.view-options').forEach(button=>button.addEventListener('click',()=>openOptions(button.dataset.category,Number(button.dataset.size))));
+dialog.querySelector('.modal-close').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+updateCategory();
+</script>
+</body>
+</html>

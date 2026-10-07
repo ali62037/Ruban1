@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0907">
+<title>Contact Us | Royal Zaika – Premium Catering in Patna</title>
+<meta name="description" content="Contact Royal Zaika in Patna for catering, meal box and event enquiries. Call, email or send us your requirements on WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#e0a43a;--gold2:#f3c868;--bg:#0b0907;--card:#16120d;--line:rgba(224,164,58,.25);--txt:#f4ede1;--mut:#b9ad98}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Poppins',sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.logo{font-family:'Cinzel',serif}
+.script{font-family:'Great Vibes',cursive;color:var(--gold)}
+.wrap{width:min(1120px,100%);margin:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border:1px solid var(--gold);border-radius:8px;font-size:.92rem;font-weight:500;transition:.25s}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1206}
+.btn:hover{transform:translateY(-2px)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;transition:.3s}
+header.scrolled{background:rgba(11,9,7,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:1.15rem;letter-spacing:1px}
+.logo-img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold)}
+.logo small{display:block;font-family:'Great Vibes',cursive;font-size:.85rem;color:var(--mut);letter-spacing:0}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{position:relative;color:var(--mut);font-size:.88rem;transition:.2s}
+nav a:hover,nav a[aria-current="page"]{color:var(--gold2)}
+nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--gold);transition:.2s}
+nav a:hover::after,nav a[aria-current="page"]::after{width:100%}
+.header-cta{display:flex;align-items:center}
+.burger{display:none;border:0;background:none;color:var(--gold2);font-size:1.6rem;cursor:pointer}
+.page-hero{position:relative;min-height:330px;padding:138px 6% 56px;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 0,#39260f 0,transparent 65%),var(--bg)}
+.page-hero::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.eyebrow{color:var(--gold2);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;font-weight:500}
+.page-hero h1{font-size:clamp(2.5rem,6vw,4rem);line-height:1.15;margin:9px 0}
+.page-hero .script{font-size:clamp(1.8rem,4vw,2.7rem)}
+.contact-section{padding:64px 6% 80px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,64px);align-items:start}
+.contact-intro .script{font-size:1.7rem}
+.contact-intro h2{font-size:clamp(1.7rem,3vw,2.25rem);line-height:1.25;margin:4px 0 12px}
+.contact-intro>p{color:var(--mut);margin-bottom:26px}
+.contact-list{display:grid;gap:12px}
+.contact-card{display:flex;align-items:center;gap:14px;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;transition:.25s}
+.contact-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.contact-icon{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border-radius:50%;background:rgba(224,164,58,.12);font-size:1.25rem}
+.contact-card small{display:block;color:var(--mut);font-size:.76rem}
+.contact-card strong{display:block;color:var(--gold2);font-size:.92rem;font-weight:500;overflow-wrap:anywhere}
+.form-card{padding:clamp(22px,4vw,34px);background:var(--card);border:1px solid var(--line);border-radius:16px}
+.form-card h2{font-size:1.45rem;color:var(--gold2);margin-bottom:5px}
+.form-card>p{color:var(--mut);font-size:.88rem;margin-bottom:22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.82rem;color:var(--txt)}
+.field input,.field select,.field textarea{width:100%;min-width:0;padding:12px 13px;border:1px solid var(--line);border-radius:8px;background:#0e0b08;color:var(--txt);font:inherit;font-size:.9rem}
+.field input::placeholder,.field textarea::placeholder{color:#847968}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid rgba(243,200,104,.55);outline-offset:1px;border-color:var(--gold)}
+.field textarea{min-height:118px;resize:vertical}
+.field select{color-scheme:dark}
+.submit-row{grid-column:1/-1;display:grid;gap:8px}
+.submit-row .btn{width:100%;cursor:pointer}
+.form-note{color:var(--mut);font-size:.74rem;text-align:center}
+.footer{background:#070605;border-top:1px solid var(--line);padding:44px 6% 18px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;max-width:1120px;margin:auto}
+.footer h3{color:var(--gold2);font-size:1rem;margin-bottom:12px}
+.footer p,.footer li{color:var(--mut);font-size:.86rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:6px}
+.footer a:hover{color:var(--gold2)}
+.footer-brand{margin-bottom:12px}
+.copy{text-align:center;color:var(--mut);font-size:.8rem;margin-top:28px;padding-top:15px;border-top:1px solid var(--line)}
+@media(max-width:960px){
+  header{height:76px;padding:8px 5%}
+  .burger{display:grid;place-items:center;z-index:3;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:rgba(22,18,13,.9);font-size:1.25rem;line-height:1}
+  header .logo{position:absolute;left:50%;transform:translateX(-50%);font-size:.9rem;gap:7px;white-space:nowrap}
+  header .logo-img{width:40px;height:40px}
+  .header-cta{display:none}
+  nav{position:fixed;inset:84px 12px auto auto;width:min(360px,calc(100vw - 48px));max-height:calc(100dvh - 104px);padding:16px;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:16px;background:#100d09;box-shadow:0 18px 55px rgba(0,0,0,.65);transform:translateX(calc(100% + 24px));opacity:0;visibility:hidden;pointer-events:none;transition:transform .28s ease,opacity .2s ease,visibility .28s}
+  nav.open{transform:translateX(0);opacity:1;visibility:visible;pointer-events:auto}
+  nav::before{content:"MENU";display:block;margin:2px 12px 12px;color:var(--gold2);font-size:.72rem;font-weight:600;letter-spacing:.18em}
+  nav ul{flex-direction:column;gap:4px}
+  nav a{display:flex;align-items:center;min-height:48px;padding:10px 12px;border-radius:9px;font-size:1rem}
+  nav a::after{display:none}
+  nav a:hover,nav a[aria-current="page"]{background:rgba(224,164,58,.1);color:var(--gold2)}
+  .page-hero{min-height:290px;padding:120px 5% 42px}
+  .contact-section{padding:44px 5% 58px}
+  .contact-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .contact-intro>p{margin-bottom:20px}
+  .contact-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer{padding:38px 5% 18px}
+}
+@media(max-width:560px){
+  header .logo{font-size:.78rem}
+  header .logo-img{width:36px;height:36px}
+  .page-hero{min-height:260px;padding-top:108px}
+  .page-hero h1{font-size:2.3rem}
+  .contact-section{padding-top:34px}
+  .contact-list{grid-template-columns:minmax(0,1fr)}
+  .contact-card{padding:13px}
+  .form-card{padding:20px 16px}
+  .form-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .field.full,.submit-row{grid-column:auto}
+  .footer-grid{grid-template-columns:1fr;gap:22px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header id="header">
+  <button class="burger" id="burger" type="button" aria-label="Open menu" aria-controls="nav" aria-expanded="false">☰</button>
+  <a href="index.html" class="logo" aria-label="Royal Zaika home">
+    <img class="logo-img" src="Royal-Zaika.webp" alt="">
+    <span>ROYAL ZAIKA<small>Taste Jo Dil Jeet Le</small></span>
+  </a>
+  <nav id="nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="mealbox.html">Meal Box</a></li>
+      <li><a href="snackbox.html">Snack Box</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-cta"><a class="btn btn-gold" href="https://wa.me/917542006601">Order Now</a></div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div>
+      <span class="eyebrow">We would love to hear from you</span>
+      <h1>Contact Us</h1>
+      <span class="script">Let’s plan something delicious</span>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <span class="script">Get in touch</span>
+        <h2>Let’s make your next meal or event special.</h2>
+        <p>Ask us about catering, meal boxes or an upcoming event. Reach out directly, or send your requirements on WhatsApp using the form.</p>
+        <div class="contact-list">
+          <a class="contact-card" href="tel:+917542006601">
+            <span class="contact-icon" aria-hidden="true">📞</span>
+            <span><small>Call us</small><strong>+91 7542006601</strong></span>
+          </a>
+          <a class="contact-card" href="https://wa.me/917542006601">
+            <span class="contact-icon" aria-hidden="true">💬</span>
+            <span><small>WhatsApp</small><strong>Chat with Royal Zaika</strong></span>
+          </a>
+          <a class="contact-card" href="mailto:info@royalzaika.com">
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <span><small>Email us</small><strong>info@royalzaika.com</strong></span>
+          </a>
+          <div class="contact-card">
+            <span class="contact-icon" aria-hidden="true">📍</span>
+            <span><small>Location</small><strong>Patna, Bihar, India</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <form class="form-card" id="enquiry-form">
+        <h2>Send an enquiry</h2>
+        <p>Share a few details and continue the conversation on WhatsApp.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" required maxlength="80" placeholder="Enter your name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="20" placeholder="Your contact number">
+          </div>
+          <div class="field full">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option value="Catering enquiry">Catering enquiry</option>
+              <option value="Meal box enquiry">Meal box</option>
+              <option value="Wedding or event enquiry">Wedding or event</option>
+              <option value="Corporate or hospital meals">Corporate or hospital meals</option>
+              <option value="Other enquiry">Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" required maxlength="1000" placeholder="Tell us a little about your requirements"></textarea>
+          </div>
+          <div class="submit-row">
+            <button class="btn btn-gold" type="submit">Continue on WhatsApp →</button>
+            <span class="form-note">Your message opens in WhatsApp; this page doesn’t store your details.</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="logo footer-brand">
+        <img class="logo-img" src="Royal-Zaika.webp" alt="">
+        <span>ROYAL ZAIKA<small>Taste Jo Dil Jeet Le</small></span>
+      </a>
+      <p>Premium catering and meal box services for all occasions in Patna and beyond.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="mealbox.html">Meal Box</a></li>
+        <li><a href="snackbox.html">Snack Box</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <ul>
+        <li><a href="tel:+917542006601">+91 7542006601</a></li>
+        <li><a href="https://wa.me/917542006601">WhatsApp</a></li>
+        <li><a href="mailto:info@royalzaika.com">info@royalzaika.com</a></li>
+        <li>Patna, Bihar, India</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">© 2026 Royal Zaika. All Rights Reserved.</div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+const nav=document.getElementById('nav');
+const burger=document.getElementById('burger');
+const closeMenu=()=>{nav.classList.remove('open');burger.textContent='☰';burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu')};
+
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+burger.addEventListener('click',()=>{
+  const isOpen=nav.classList.toggle('open');
+  burger.textContent=isOpen?'✕':'☰';
+  burger.setAttribute('aria-expanded',String(isOpen));
+  burger.setAttribute('aria-label',isOpen?'Close menu':'Open menu');
+});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+  closeMenu();
+}));
+document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!burger.contains(event.target))closeMenu()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
+document.getElementById('enquiry-form').addEventListener('submit',event=>{
+  event.preventDefault();
+  const form=new FormData(event.currentTarget);
+  const message=[
+    'Hello Royal Zaika, I would like to make an enquiry.',
+    `Name: ${form.get('name')}`,
+    `Phone: ${form.get('phone')}`,
+    `Requirement: ${form.get('service')}`,
+    `Message: ${form.get('message')}`
+  ].join('\n');
+  location.href=`https://wa.me/917542006601?text=${encodeURIComponent(message)}`;
+});
+</script>
+</body>
+</html>
